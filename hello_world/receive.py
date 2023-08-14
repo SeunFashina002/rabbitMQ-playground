@@ -14,7 +14,7 @@ def main():
 
     # receive message from the queue
     channel.basic_consume(queue="hello", on_message_callback=callback, auto_ack=True)
-    print(' [*] Waiting for messages. To exisit press CTRL + C')
+    print(' [*] Waiting for messages. To exist press CTRL + C')
 
     channel.start_consuming()
 
