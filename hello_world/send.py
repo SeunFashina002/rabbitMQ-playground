@@ -7,13 +7,14 @@ channel = connection.channel()
 channel.queue_declare(queue='hello')
 
 
+message = "hello world!"
 # routing_key -> queue name
 # send a message to the queue
 channel.basic_publish(
     exchange="",
     routing_key="hello",
-    body="Hello World"
+    body=message
 )
 
-print("[x] Sent 'Hello World'")
+print(f"[x] Sent {message}")
 connection.close()
